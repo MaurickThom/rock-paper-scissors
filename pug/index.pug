@@ -1,0 +1,29 @@
+- 
+    let pageTitle = 'Rock Paper Scissors Game'
+    let img = ['rock','paper','scissors']
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title= pageTitle
+        link(rel="stylesheet", href="css/style.css")
+    body
+        header.main-header
+            h1= pageTitle 
+        .score-board
+            .badge#user-label= 'user'
+            .badge#bot-label= 'bot'
+            span#user-score 0 
+            | : 
+            span#bot-score 0
+        .result
+            p.result_p Let the game begin !! 
+        .choices
+            - for(let i=0;i<img.length;i++)
+                div(class="choice")
+                    img(src=`img/${img[i]}.png` alt=`${img[i]}`  id=`${img[i]}`)
+        p#action-message= 'Make your move'
+        
+        script(src="js/script-dist.js")
