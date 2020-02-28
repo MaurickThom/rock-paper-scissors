@@ -13,15 +13,15 @@ const getBotChoice = ()=>{
     let random = Math.floor(Math.random()*3)
     return choices[random]
 }
-const win=author=>{
-    if(author==='user') return userScore++
-    return botScore++
-}
-const lose = author=>{
+const win = author => (
+    author==='user' ? userScore++ : botScore++
+)
+
+const lose = author => {
     if(userScore===0 || botScore===0) return
-    if(author==='user') return userScore--
-    return botScore--
+    return (author==='user') ? userScore-- : botScore--
 }
+
 const convertToWord = letter=>{
     if(letter==='r') return 'Rock'
     if(letter==='p') return 'Paper'
